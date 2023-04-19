@@ -1,0 +1,102 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 19, 2023 at 01:51 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_website`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `id_barang` int(12) NOT NULL,
+  `nama_barang` varchar(50) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `jumlah_barang` int(30) NOT NULL,
+  `harga_barang` int(30) NOT NULL,
+  `berat_barang` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `jenis_barang`, `jumlah_barang`, `harga_barang`, `berat_barang`) VALUES
+(0, 'Harley Ring', 'Cincin', 10, 20000000, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `costumer`
+--
+
+CREATE TABLE `costumer` (
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(8) NOT NULL,
+  `alamat` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logins`
+--
+
+CREATE TABLE `logins` (
+  `username` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `logins`
+--
+
+INSERT INTO `logins` (`username`, `email`, `password`) VALUES
+('ascnascb23', 'smhdcs@gmail.com', '777bbb7869'),
+('sabrina123', 'aksjcalcs@gmail.com', 'f45731e3d3'),
+('sabrina1245', 'hkwdciwvdc@gmail.com', 'f45731e3d3'),
+('sabrina1245lkj', 'psodjvpvd@gmail.com', '202cb962ac'),
+('sasa26', 'sasa@gmail.com', 'sasa123_'),
+('slkdkcvL21', 'mascbkabj@gmail.com', '0d61130a6d');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `costumer`
+--
+ALTER TABLE `costumer`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `logins`
+--
+ALTER TABLE `logins`
+  ADD PRIMARY KEY (`username`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
